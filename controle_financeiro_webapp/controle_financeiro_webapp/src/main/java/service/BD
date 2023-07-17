@@ -1,0 +1,43 @@
+ -- Criação da tabela "Usuários"
+CREATE TABLE Usuarios (
+  id_usuario SERIAL PRIMARY KEY,
+  nome VARCHAR(100),
+  nickname VARCHAR(100) UNIQUE,
+  email VARCHAR(100),
+  senha VARCHAR(100)
+);
+
+-- Criação da tabela "Conta"
+CREATE TABLE Contas (
+  id_conta SERIAL PRIMARY KEY,
+  id_usuario INTEGER REFERENCES Usuarios(id_usuario),
+  nome_conta VARCHAR(100),
+  saldo_disponivel NUMERIC(10, 2)
+);
+
+-- Criação da tabela "Movimentacao"
+CREATE TABLE Movimentacao (
+  id_movimentacao SERIAL PRIMARY KEY,
+  id_conta INTEGER REFERENCES Contas(id_conta),
+  data DATE,
+  valor NUMERIC(10, 2),
+  setor VARCHAR(100)
+);
+
+-- Criação da tabela "Investimentos"
+CREATE TABLE Investimentos (
+  id_investimento SERIAL PRIMARY KEY,
+  id_conta INTEGER REFERENCES Contas(id_conta),
+  nome_investimento VARCHAR(100),
+  valor_investido NUMERIC(10, 2),
+  rendimento NUMERIC(10, 2)
+);
+
+-- Criação da tabela "Cofrinhos"
+CREATE TABLE Cofrinhos (
+  id_cofrinho SERIAL PRIMARY KEY,
+  id_conta INTEGER REFERENCES Contas(id_conta),
+  nome_cofrinho VARCHAR(100),
+  valor_total_esperado NUMERIC(10, 2),
+  valor_atual NUMERIC(10, 2)
+);
