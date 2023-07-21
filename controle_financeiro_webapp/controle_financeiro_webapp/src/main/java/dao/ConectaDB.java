@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConectaDB {
-    private static final String URL = "jdbc:postgresql://localhost:5035/banco_webapp";
+    private static final String URL = "jdbc:postgresql://localhost:5034/banco_webapp";
     private static final String USUARIO = "postgres";
     private static final String SENHA = "1130";
 

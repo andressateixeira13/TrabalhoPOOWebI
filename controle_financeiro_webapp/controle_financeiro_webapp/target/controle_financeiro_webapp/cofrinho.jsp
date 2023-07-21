@@ -3,8 +3,47 @@
 <%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+    <title>COFRINHOS</title>
+    <style>
+        /* Estilos padrão */
+        body {
+            background-color: #6c63ff;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
 
+        h2 {
+            margin-top: 40px;
+        }
+
+        div {
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #ffffff;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        th {
+            background-color: #ff6c63;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 108, 99, 0.2);
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
 <h2>COFRINHOS</h2>
 <div>
     <c:if test="${not empty cofrinhos}">
@@ -14,11 +53,11 @@
                 <th>Valor Total Esperado</th>
                 <th>Valor Atual</th>
             </tr>
-            <c:forEach var="cofrinhos" items="${cofrinhos}">
+            <c:forEach var="cofrinho" items="${cofrinhos}">
                 <tr>
-                    <td>${cofrinhos.nomeCofrinho}</td>
-                    <td>${cofrinhos.valorTotalEsperado}</td>
-                    <td>${cofrinhos.valorAtual}</td>
+                    <td>${cofrinho.nomeCofrinho}</td>
+                    <td>${cofrinho.valorTotalEsperado}</td>
+                    <td>${cofrinho.valorAtual}</td>
                 </tr>
             </c:forEach>
         </table>
@@ -26,6 +65,6 @@
 </div>
 
 <a href="novoCofrinho.jsp">Fazer cofrinho</a>
-<a href="principal.jsp">Pagina inicial</a>
+<a href="principal.jsp">Página inicial</a>
 </body>
 </html>
