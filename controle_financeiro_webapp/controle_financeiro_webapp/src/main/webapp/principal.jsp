@@ -101,23 +101,6 @@
     </form>
 </div>
 
-<!-- Aba de informações de entrada e saída recentes -->
-<div class="tab-container">
-    <h3 onclick="toggleTab()">Entradas e Saídas Recentes</h3>
-    <div class="tab-content" id="tab-content">
-        <!-- Conteúdo da aba aqui (pode ser uma tabela ou lista) -->
-        <p>Lista de entradas e saídas recentes...</p>
-    </div>
-</div>
-
-<!-- Cofrinhos animados -->
-<div class="cofrinho-container">
-    <div class="cofrinho">Cofrinho 1</div>
-    <div class="cofrinho">Cofrinho 2</div>
-    <div class="cofrinho">Cofrinho 3</div>
-    <!-- Adicione quantos cofrinhos desejar -->
-</div>
-
 <!-- Gráfico de gastos -->
 <div class="grafico-container">
     <canvas id="meuGrafico"></canvas>
